@@ -10,7 +10,7 @@ export const App = () => {
         color: '#010101'
       }}
     >
-   goit-react-hw-07-phonebook
+   goit-react-hw-07-phonebook test
     </div>
   );
 };
