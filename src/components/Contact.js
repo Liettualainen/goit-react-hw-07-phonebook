@@ -1,9 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { deleteContact} from '../redux/operations';
+import { deleteContact } from '../redux/operations';
+
 import { DeleteButton, FilterBlock } from './Layout.js';
-
-
 
 const Contact = ({ contact: { id, name, phone } }) => {
   const dispatch = useDispatch();
@@ -14,11 +13,11 @@ const Contact = ({ contact: { id, name, phone } }) => {
     <label >
       <FilterBlock>
         <span>{name}: </span>
-        <span>{phone}</span>
+        <span>{phone}: </span>
       </FilterBlock>
 
       <DeleteButton  onClick={handlerDeleteContact}>
-        Delete
+       DELETE
       </DeleteButton>
     </label>
   );

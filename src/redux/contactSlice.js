@@ -15,7 +15,7 @@ const fetchError = (state, action) => {
 };
 
 const contactsSlice = createSlice({
-  name: "contacts",
+  name: 'contacts',
   initialState: {
     items: [],
     isLoading: false,
@@ -27,7 +27,10 @@ const contactsSlice = createSlice({
     [fetchContacts.rejected]: fetchError,
 
     [addContact.pending]: fetchInProgress,
-    [addContact.fulfilled]: fetchFulfilled,
+    [addContact.fulfilled](state, action) {
+      state.isLoading = false;
+      state.items.push(action.payload);
+    },
     [addContact.rejected]: fetchError,
 
     [deleteContact]: fetchInProgress,
